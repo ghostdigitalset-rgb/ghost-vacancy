@@ -566,6 +566,7 @@ async function showPostStatus(id) {
     <div style="margin-top:16px;font-size:13px;color:var(--muted)">Reference: <strong>${p.reference_code || 'Pending'}</strong></div>
   `;
   showPage('post-detail');
+setTimeout(loadDashboard, 30000);
 }
 
 function showPaymentDetail(id, ref, plan) {
