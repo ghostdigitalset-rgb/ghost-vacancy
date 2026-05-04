@@ -642,9 +642,10 @@ async function handleLogout() {
 (async () => {
   const { data: { session } } = await sb.auth.getSession();
   if (session) {
-    currentUser = session.user;
+ currentUser = session.user;
     await loadEmployerProfile();
     await loadDashboard();
+    showPage('dashboard');
   }
 })();
 </script>
