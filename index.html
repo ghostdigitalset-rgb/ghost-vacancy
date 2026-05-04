@@ -1132,11 +1132,11 @@ ${v.how_to_apply||'—'}
   admOpenModal(`<h3>PREVIEW & PUBLISH</h3><p class="sub">${v.plan==='featured'?'Featured — Telegram + TikTok':'Standard — Telegram only'}</p>
     <div class="adm-tg-preview">
       <div class="adm-tg-header">📢 @ghostvacancyet · just now</div>
-      <div class="adm-tg-body">${msg.replace(/\n/g,'<br>')}</div>
+      <div class="adm-tg-body">${msg.split('\n').join('<br>')}</div>
     </div>
     ${ttSection}
     <div class="adm-modal-actions">
-      <button class="adm-btn adm-btn-publish" id="adm-pub-btn" onclick="admDoPublish('${id}',\`${msg.replace(/`/g,"'")}\`)">✅ Publish to Telegram</button>
+      <button class="adm-btn adm-btn-publish" id="adm-pub-btn" onclick="admDoPublish('${id}','${msg.split('`').join(`"`)}')">✅ Publish to Telegram</button>
       <button class="adm-btn adm-btn-view" onclick="admCloseModal()">Cancel</button>
     </div>`);
 }
