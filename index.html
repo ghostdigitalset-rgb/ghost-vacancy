@@ -487,7 +487,9 @@ async function loadEmployerProfile() {
     if (data.status === 'pending') {
       document.getElementById('posts-list').innerHTML = '<div class="alert alert-warning">⏳ Your account is pending verification. We will email you within 24 hours once approved.</div>';
     }
-  }
+  } else if (data.status === 'approved') {
+  showSection('post-job-section');
+}
 }
 
 async function loadDashboard() {
