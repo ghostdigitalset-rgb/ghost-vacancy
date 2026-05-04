@@ -485,11 +485,12 @@ async function loadEmployerProfile() {
     document.getElementById('dash-greeting').textContent = `WELCOME, ${data.first_name.toUpperCase()} 👋`;
     document.getElementById('dash-sub').textContent = `${data.company_name} · ${data.email}`;
     if (data.status === 'pending') {
-      document.getElementById('posts-list').innerHTML = '<div class="alert alert-warning">⏳ Your account is pending verification. We will email you within 24 hours once approved.</div>';
+      document.getElementById('posts-list').innerHTML = '<div class="alert alert-warning">⏳ Your account is pending verification. We will email you within 24 hours.</div>';
+    } else if (data.status === 'approved') {
+      showSection('post-job-section');
     }
-  } else if (data.status === 'approved') {
-  showSection('post-job-section');
-}
+  }
+  setTimeout(loadEmployerProfile, 30000);
 }
 
 async function loadDashboard() {
