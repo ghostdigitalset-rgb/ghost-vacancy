@@ -1132,8 +1132,7 @@ ${v.how_to_apply||'—'}
   admOpenModal(`<h3>PREVIEW & PUBLISH</h3><p class="sub">${v.plan==='featured'?'Featured — Telegram + TikTok':'Standard — Telegram only'}</p>
     <div class="adm-tg-preview">
       <div class="adm-tg-header">📢 @ghostvacancyet · just now</div>
-      <div class="adm-tg-body">${msg.replace(/
-/g,'<br>')}</div>
+      <div class="adm-tg-body">${msg.replace(/\n/g,'<br>')}</div>
     </div>
     ${ttSection}
     <div class="adm-modal-actions">
